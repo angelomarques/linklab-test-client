@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.productsSection {
+  padding: 2rem 0.75rem;
+  position: relative;
+  z-index: 99;
+
+  @include sm-breakpoint {
+    padding: 3.5rem 9.6875rem 2.25rem;
+    max-width: 1765px;
+    margin: 0 auto 0;
+  }
+
+  h2 {
+    color: $color-neutral-20;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin: 2rem 0rem 2.5rem;
+
+    @include sm-breakpoint {
+      margin: 7.375rem 0rem 4rem;
+    }
+  }
+
+  & > [class~="items-container"] {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+
+    @include sm-breakpoint {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 5.625rem;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+
+.button {
+  border: none;
+  display: flex;
+  align-items: center;
+
+  &[class~="contained"] {
+    padding: 0.625rem;
+    border-radius: 8px;
+    background-color: $color-primary;
+    max-height: 42px;
+  }
+
+  &[class~="dropdown"] {
+    color: $color-white;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    gap: 0.625rem;
+    transition: all 150ms ease-in-outs;
+
+    &[class~="active"] {
+      color: $color-primary;
+
+      & svg {
+        transform: rotate(180deg);
+      }
+
+      & path {
+        stroke: $color-primary;
+      }
+    }
+
+    & svg {
+      transition: all 150ms ease-in-out;
+    }
+
+    & path {
+      stroke: $color-white;
+    }
+  }
+
+  &[class~="secondary"] {
+    gap: 0.25rem;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    padding: 12px 18px; 
+    justify-content: center;
+    border-radius: 7px;
+    background: $color-primary-90;
+  }
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}

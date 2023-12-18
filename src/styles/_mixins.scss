@@ -1,0 +1,13 @@
+@import "./variables";
+
+@mixin sm-breakpoint {
+  @media only screen and (min-width: $smBreakpoint) {
+    @content;
+  }
+}
+
+@mixin xxl-breakpoint {
+  @media only screen and (min-width: $xxlBreakpoint) {
+    @content;
+  }
+}

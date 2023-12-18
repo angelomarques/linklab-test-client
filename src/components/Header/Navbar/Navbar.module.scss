@@ -1,0 +1,93 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.navbar {
+  background-color: $color-neutral-20;
+  padding: 0rem 1.875rem 3rem;
+  position: fixed;
+  right: -60px;
+  width: 0;
+  overflow: hidden;
+  height: 100%;
+  z-index: 999;
+
+  @include sm-breakpoint {
+    display: none;
+  }
+
+  &[class~="open"] {
+    width: 100%;
+    right: 0;
+    transition: all 300ms ease-in-out;
+    overflow: scroll;
+    max-height: 85%;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 110.2%;
+    color: $color-white;
+
+    &:first-child {
+      max-width: 160px;
+    }
+
+    &:not(:first-child) {
+      max-width: 200px;
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 98.7%;
+    color: $color-white;
+    margin: 2.75rem 0rem 1.25rem;
+  }
+
+  a {
+    font-weight: 400;
+    line-height: normal;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & [class~="nav-links"] {
+    list-style: none;
+    margin: 2rem 0rem;
+
+    li {
+      color: $color-white;
+      font-size: 15px;
+
+      &:not(:last-child) {
+        margin-bottom: 1.25rem;
+      }
+    }
+  }
+
+  & [class~="category-links"] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+
+    & + [class~="category-links"] {
+      margin-top: 1.25rem;
+    }
+
+    a {
+      font-size: 14px;
+      color: $color-neutral-99;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  }
+
+  & > div {
+    overflow: scroll;
+  }
+}
